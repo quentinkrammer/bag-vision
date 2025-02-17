@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "bag-vision-webpart-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/bagVisionWebpart/BagVisionWebpartWebPart.js",
+          "manifest": "./src/webparts/bagVisionWebpart/BagVisionWebpartWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BagVisionWebpartWebPartStrings": "lib/webparts/bagVisionWebpart/loc/{locale}.js"
+  }
+}
