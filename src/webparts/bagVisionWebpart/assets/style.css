@@ -1,3 +1,220 @@
-.foo {
-  color: blueviolet;
+.stacey-container {
+  font-family: Arial, sans-serif;
+  --brockhaus-red: #b81f40;
+  --brockhaus--darkgray: #575756;
+  --brockhaus-lightgray: #f0f0f0;
+}
+
+.stacey-container {
+  grid-area: 1/1;
+  font-family: Arial, sans-serif;
+  --stacey-container-max-width: 800px;
+
+  overflow: hidden;
+  margin-top: 50px;
+  margin-inline: auto;
+
+  max-width: var(--stacey-container-max-width);
+}
+
+.stacey-container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.stacey-container input[type="radio"] {
+  all: unset;
+  appearance: auto;
+  accent-color: var(--brockhaus--darkgray);
+}
+
+.stacey-container label {
+  all: unset;
+}
+
+.stacey-container p {
+  color: var(--brockhaus--darkgray);
+}
+
+.stacey-container h2,
+.stacey-container h3,
+.stacey-container h4 {
+  color: var(--brockhaus-red);
+}
+
+.stacey-container .questionaire-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--brockhaus-lightgray);
+}
+
+.stacey-container .header-container {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+
+.stacey-container .header {
+  font-weight: 400;
+  color: var(--brockhaus-red);
+  border-bottom: solid var(--brockhaus-red) 1px;
+  align-self: end;
+  padding-right: 4rem;
+  margin-right: auto;
+  font-size: 2.6rem;
+}
+
+.stacey-container .agileversity-logo {
+  display: block;
+  max-width: 100%;
+  min-width: 130px;
+}
+
+.stacey-container .question-answer-button-container {
+  margin-inline: auto;
+}
+
+.stacey-container .question {
+  font-weight: 400;
+  padding-block: 1.5rem;
+  color: var(--brockhaus--darkgray);
+}
+
+.stacey-container .answer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stacey-container .answer {
+  color: var(--brockhaus--darkgray);
+  background-color: white;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.stacey-container .answer:hover,
+.stacey-container .answer:focus {
+  outline: solid var(--brockhaus--darkgray) 1px;
+}
+
+.stacey-container .button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  padding-top: 1rem;
+}
+
+.stacey-container .button {
+  all: unset;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.stacey-container .button:hover:not(:disabled),
+.stacey-container .button:focus {
+  outline: solid var(--brockhaus--darkgray) 1px;
+}
+
+.stacey-container .button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.stacey-container .secondary-button {
+  background: white;
+  color: var(--brockhaus-red);
+}
+
+.stacey-container .primary-button {
+  background: var(--brockhaus-red);
+  color: var(--brockhaus-lightgray);
+}
+
+.stacey-container .display-none {
+  display: none !important;
+}
+
+.stacey-container .results-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 8px;
+}
+
+.stacey-container .result-header {
+  font-weight: 400;
+  color: var(--brockhaus-red);
+  font-size: 2rem;
+  text-align: center;
+  font-size: 2.6rem;
+  padding-top: 2rem;
+}
+
+.stacey-container .result-summary-header {
+  color: var(--brockhaus-red);
+  text-align: center;
+  padding-top: 16px;
+}
+
+.stacey-container .result-summary-text {
+  text-align: center;
+}
+
+.stacey-container .result-image-container {
+  display: grid;
+  position: relative;
+}
+
+.stacey-container .result-image {
+  grid-area: 1/1;
+  display: block;
+  max-width: 100%;
+  justify-self: center;
+}
+
+.stacey-container .result-image-dot {
+  grid-area: 1/1;
+  position: absolute;
+  background: var(--brockhaus-red);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.stacey-container .area-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: white;
+  padding: 1rem;
+}
+
+.stacey-container .question-counter {
+  display: block;
+  width: fit-content;
+  background-color: white;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-inline: auto;
+}
+
+.stacey-container .contact {
+  margin-top: 8px;
+}
+
+.stacey-container a {
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: #575757;
+  width: fit-content;
+  color: #575757;
+}
+
+.stacey-container a:hover {
+  text-shadow: 1px 0 0 currentColor;
 }
