@@ -110,9 +110,11 @@ export default class BagVisionWebpartWebPart extends BaseClientSideWebPart<IBagV
     }
   }
 
-  private loadAssets() {
-    SPComponentLoader.loadScript(require("./assets/script.js")).catch(() => {});
-    SPComponentLoader.loadCss(require("./assets/style.css"));
+  private loadAssets(): void {
+    const scriptUrl = `${require("./assets/script.js")}`;
+    const styleUrl = `${require("./assets/style.css")}`;
+    SPComponentLoader.loadScript(scriptUrl).catch(() => {});
+    SPComponentLoader.loadCss(styleUrl);
   }
 
   // private fooAnchor() {
