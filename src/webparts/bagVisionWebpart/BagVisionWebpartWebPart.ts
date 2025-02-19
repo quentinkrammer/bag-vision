@@ -13,92 +13,64 @@ export interface IBagVisionWebpartWebPartProps {
 
 export default class BagVisionWebpartWebPart extends BaseClientSideWebPart<IBagVisionWebpartWebPartProps> {
   public render(): void {
-    this.domElement.innerHTML = `<div class="stacey-container">
-      <div id="questionaire-container" class="questionaire-container">
-        <div class="header-container">
-          <h2 class="header">STACEY MATRIX - KOMPLEXITÄT BESTIMMEN</h2>
-          <img
-            class="agileversity-logo"
-            src="${require("./assets/agileversity-logo.png")}"
-          />
-        </div>
-        <div
-          id="question-answer-button-container"
-          class="question-answer-button-container"
-        >
-          <h3 id="question" class="question"></h3>
-          <div id="answer-container" class="answer-container"></div>
-          <p id="question-counter" class="question-counter">FRAGE 1 VON 8</p>
-          <div class="button-container">
+    this.domElement.innerHTML = `<div class="root-container">
+      <div id="image-container" class="image-container">
+        <img
+          src="${require("./assets/vision_blue.png")}"
+          class="liftable blue"
+          data-name="blue"
+        />
+        <img
+          src="${require("./assets/vision_green.png")}"
+          class="liftable green"
+          data-name="green"
+        />
+        <img
+          src="${require("./assets/vision_yellow.png")}"
+          class="liftable yellow"
+          data-name="yellow"
+        />
+      </div>
+      <div id="small-modal" popover class="popover">
+        <div class="small-popover-container">
+          <div class="small-popover-header-container">
             <button
               type="button"
-              id="back-button"
-              class="button secondary-button"
-              onclick="onBackButton()"
+              id="small-modal-close-button"
+              class="small-popover-close-button"
             >
-              ZURÜCK
+              ✖
             </button>
-            <button
-              type="button"
-              class="button primary-button"
-              id="next-button"
-              onclick="onNextButton()"
-            >
-              WEITER
-            </button>
-            <button
-              type="button"
-              class="button primary-button"
-              id="calculate-results-button"
-              onclick="onCalculateResultsButton()"
-            >
-              AUSWERTUNG
-            </button>
+            <h2 id="small-modal-header" class="small-popover-header"></h2>
           </div>
-        </div>
-        <div id="results-container" class="results-container display-none">
-          <h3 class="result-header">EINORDNUNG IN DIE STACEY MATRIX</h3>
-          <h4
-            id="result-summary-header-requirements"
-            class="result-summary-header"
-          ></h4>
-          <p
-            id="result-summary-text-requirements"
-            class="result-summary-text"
-          ></p>
-          <h4
-            id="result-summary-header-implementation"
-            class="result-summary-header"
-          ></h4>
-          <p
-            id="result-summary-text-implementation"
-            class="result-summary-text"
-          ></p>
-          <div class="result-image-container">
-            <img
-              id="result-image"
-              class="result-image"
-              src="${require("./assets/stacey-matrix.png")}"
-            />
-            <div id="result-image-dot" class="result-image-dot"></div>
-          </div>
-        </div>
-        <div id="contact" class="area-text-container contact display-none">
-          <h4>KONTAKT</h4>
-          <div style="display: flex; gap: 4px; flex-wrap: wrap">
-            <p>Hier findest du unseren</p>
-            <a
-              href="files/content/brockhaus_ag/downloads/agileversity_trainingskatalog.pdf"
-              target="_blank"
-              >Trainingskatalog</a
-            >
-          </div>
-          <p>Und so kannst du uns erreichen:</p>
-          <a href="mailto:agileversity@brockhaus-ag.de"
-            >agileversity@brockhaus-ag.de</a
+          <div id="small-modal-content" class="small-popover-content"></div>
+          <button
+            type="button"
+            id="open-large-modal-button"
+            class="open-large-popover-button"
           >
-          <p>Head of Agileversity - André Beschmann: +49 (0) 231 98 75 - 690</p>
+            <svg
+              width="8"
+              height="12"
+              viewBox="0 0 8 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.04289 0.792893C1.43342 0.402369 2.06658 0.402369 2.45711 0.792893L6.95711 5.29289C7.34763 5.68342 7.34763 6.31658 6.95711 6.70711L2.45711 11.2071C2.06658 11.5976 1.43342 11.5976 1.04289 11.2071C0.652369 10.8166 0.652369 10.1834 1.04289 9.79289L4.83579 6L1.04289 2.20711C0.652369 1.81658 0.652369 1.18342 1.04289 0.792893Z"
+                fill="white"
+              ></path>
+            </svg>
+            <span>Details</span>
+          </button>
         </div>
+      </div>
+      <div id="large-modal" popover class="popover large-popover">
+        <div>
+          <button type="button" id="large-modal-close-button">X</button>
+          <h2 id="large-modal-header"></h2>
+        </div>
+        <div id="large-modal-content"></div>
       </div>
     </div>
    `;
